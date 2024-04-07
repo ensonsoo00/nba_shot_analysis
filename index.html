@@ -16,24 +16,14 @@
         <style>
             #loading { outline: none; border: none; background: transparent }
         </style>
-        <!-- <py-env>
-            - pandas
-            - paths:
-                - ./data/shots-2000.csv
-                - ./data/shots-2019.csv
-                - ./data/nba_court.png
-        </py-env> -->
-        <title>Matplotlib</title>
+        <title>Shot chart comparison</title>
     </head>
 
     <body>
 
         <section class="pyscript">
-            <!-- <py-env>
-                - Pillow
-            </py-env> -->
             <div id="mpl"></div>
-            <py-script type="py" src="./main2.py" config="./pyscript.toml"></py-script>
+            <py-script type="py" src="./shot_chart_comparison.py" config="./pyscript.toml"></py-script>
         </section>
 
     </body>
