@@ -1,6 +1,5 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from pyscript import display
 import numpy as np
 from pyodide.http import open_url
 from matplotlib.widgets import RadioButtons
@@ -17,7 +16,7 @@ df_2019_ny = df2019[df2019["team"]=="New York"]
 
 
 fig, ax = plt.subplots(1,2, figsize=(10,5))
-plt.figtext(0.3, 0, "Reset/Undo/Redo/Pan/Zoom")
+plt.figtext(0.305, 0, "Reset/Undo/Redo/Pan/Zoom")
 
 plt.subplots_adjust(left=0.2, bottom=0.4, right=0.8)
 fig.canvas.set_window_title("Figure: Shot Chart Comparison between 2000 and 2019")
