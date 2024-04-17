@@ -26,7 +26,7 @@ def shot_charts(df1, df2):
     missed1 = df1[df1["outcome"]=="missed"]
     made1 = df1[df1["outcome"]=="made"]
     ax[0].scatter(missed1["x_adj"], missed1["y_adj"], marker=".", c="red", alpha=0.35, s=8, label="missed")
-    ax[0].scatter(made1["x_adj"], made1["y_adj"], marker=".", c="green", alpha=0.35, s=8, label="made")
+    ax[0].scatter(made1["x_adj"], made1["y_adj"], marker=".", c="blue", alpha=0.35, s=8, label="made")
     ax[0].set_xlim([0,500])
     ax[0].set_ylim([0,500])
     ax[0].set_aspect("equal")
@@ -41,7 +41,7 @@ def shot_charts(df1, df2):
     missed2 = df2[df2["outcome"]=="missed"]
     made2 = df2[df2["outcome"]=="made"]
     ax[1].scatter(missed2["x_adj"], missed2["y_adj"], marker=".", c="red", alpha=0.35, s=8, label="missed")
-    ax[1].scatter(made2["x_adj"], made2["y_adj"], marker=".", c="green", alpha=0.35, s=8, label="made")
+    ax[1].scatter(made2["x_adj"], made2["y_adj"], marker=".", c="blue", alpha=0.35, s=8, label="made")
     ax[1].set_xlim([0,500])
     ax[1].set_ylim([0,500])
     ax[1].set_aspect("equal")
@@ -84,7 +84,7 @@ def select_team2000(val):
     missed = df[df["outcome"]=="missed"]
     made = df[df["outcome"]=="made"]
     ax[0].scatter(missed["x_adj"], missed["y_adj"], marker=".", c="red", alpha=0.35, s=8, label="missed")
-    ax[0].scatter(made["x_adj"], made["y_adj"], marker=".", c="green", alpha=0.35, s=8, label="made")
+    ax[0].scatter(made["x_adj"], made["y_adj"], marker=".", c="blue", alpha=0.35, s=8, label="made")
     ax[0].set_xlim([0,500])
     ax[0].set_ylim([0,500])
     ax[0].set_aspect("equal")
@@ -106,7 +106,7 @@ def select_team2019(val):
     missed = df[df["outcome"]=="missed"]
     made = df[df["outcome"]=="made"]
     ax[1].scatter(missed["x_adj"], missed["y_adj"], marker=".", c="red", alpha=0.35, s=8, label="missed")
-    ax[1].scatter(made["x_adj"], made["y_adj"], marker=".", c="green", alpha=0.35, s=8, label="made")
+    ax[1].scatter(made["x_adj"], made["y_adj"], marker=".", c="blue", alpha=0.35, s=8, label="made")
     ax[1].set_xlim([0,500])
     ax[1].set_ylim([0,500])
     ax[1].set_aspect("equal")
@@ -117,12 +117,6 @@ def select_team2019(val):
     fig.canvas.draw_idle()
 
 radio2019.on_clicked(select_team2019)
-
-
-
-
-    
-
 
 shot_charts(df_2000_ny, df_2019_ny)
 plt.show()
