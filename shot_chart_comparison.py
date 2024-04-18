@@ -34,7 +34,8 @@ def shot_charts(df1, df2):
     ax[0].set_xticks([])
     ax[0].set_yticks([])
     ax[0].set_title("NBA 2000 Shot Chart")
-    ax[0].legend(bbox_to_anchor=(0.99,0.8), loc="upper left", handlelength=0.55)
+    # ax[0].legend(bbox_to_anchor=(0.99,0.8), loc="upper left", handlelength=0.55)
+    ax[0].legend(bbox_to_anchor=(0,0), loc="upper left", handlelength=0.55)
 
 
     # color2 = df2["outcome"].apply(lambda x: "red" if x=="missed" else "green")
@@ -92,7 +93,8 @@ def select_team2000(val):
     ax[0].set_xticks([])
     ax[0].set_yticks([])
     ax[0].set_title("NBA 2000 Shot Chart")
-    ax[0].legend(bbox_to_anchor=(0.99,0.8), loc="upper left", handlelength=0.55)
+    # ax[0].legend(bbox_to_anchor=(0.99,0.8), loc="upper left", handlelength=0.55)
+    ax[0].legend(bbox_to_anchor=(0,0), loc="upper left", handlelength=0.55)
     fig.canvas.draw_idle()
 
 radio2000.on_clicked(select_team2000)
