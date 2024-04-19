@@ -44,9 +44,9 @@ d3.csv("../data/shots-2019-preprocessed.csv").then(function(data) {
     mergedData.sort((a, b) => b.twoPointShots - a.twoPointShots);
   
     // Define the dimensions of the SVG
-    var margin = {top: 50, right: 50, bottom: 150, left: 40},
-        width = 800 - margin.left - margin.right,
-        height = 480 - margin.top - margin.bottom;
+    var margin = {top: 50, right: 50, bottom: 50, left: 40},
+        width = 1000 - margin.left - margin.right,
+        height = 600 - margin.top - margin.bottom;
   
     // Create scales
     const xScale = d3.scaleBand()
@@ -95,7 +95,8 @@ d3.csv("../data/shots-2019-preprocessed.csv").then(function(data) {
         .attr('x', d => xScale(d.player) + xScale.bandwidth() / 4)
         .attr('y', d => yScale(d.threePointShots) - 5)
         .style('text-anchor', 'middle')
-        .text(d => d.threePointShots);
+        .text(d => d.threePointShots)
+        .style("font-size", "12px");
   
     // Add text labels for two-pointers
     svg.selectAll('.twoPointLabel')
@@ -105,7 +106,8 @@ d3.csv("../data/shots-2019-preprocessed.csv").then(function(data) {
         .attr('x', d => xScale(d.player) + 3 * xScale.bandwidth() / 4)
         .attr('y', d => yScale(d.twoPointShots) - 5)
         .style('text-anchor', 'middle')
-        .text(d => d.twoPointShots);
+        .text(d => d.twoPointShots)
+        .style("font-size", "12px");
   
     // Create X axis
     svg.append("g")
@@ -124,7 +126,7 @@ d3.csv("../data/shots-2019-preprocessed.csv").then(function(data) {
     svg.append("text")             
     .attr("transform",
         "translate(" + (width/2) + " ," + 
-                        (height + margin.top -100) + ")")
+                        (height + margin.top - 20) + ")")
     .style("text-anchor", "middle")
     .style('font-size', '13px')
     .text("Players");
