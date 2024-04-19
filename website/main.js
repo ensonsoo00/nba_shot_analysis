@@ -45,8 +45,8 @@ d3.csv("../data/shots-2019-preprocessed.csv").then(function(data) {
   
     // Define the dimensions of the SVG
     var margin = {top: 50, right: 50, bottom: 150, left: 40},
-        width = 1000 - margin.left - margin.right,
-        height = 600 - margin.top - margin.bottom;
+        width = 800 - margin.left - margin.right,
+        height = 480 - margin.top - margin.bottom;
   
     // Create scales
     const xScale = d3.scaleBand()
@@ -59,7 +59,7 @@ d3.csv("../data/shots-2019-preprocessed.csv").then(function(data) {
       .range([height - margin.bottom, margin.top]);
   
     // Create SVG
-    var svg = d3.select('body').append('svg')
+    var svg = d3.select('#plot')
       .attr('width', width + margin.left + margin.right)
       .attr('height', height + margin.top + margin.bottom)
       .append('g')
