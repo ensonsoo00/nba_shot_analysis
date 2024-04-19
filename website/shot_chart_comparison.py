@@ -34,11 +34,8 @@ def shot_charts(df1, df2):
     ax[0].set_xticks([])
     ax[0].set_yticks([])
     ax[0].set_title("NBA 2000 Shot Chart")
-    # ax[0].legend(bbox_to_anchor=(0.99,0.8), loc="upper left", handlelength=0.55)
     ax[0].legend(bbox_to_anchor=(0,0), loc="upper left", handlelength=0.55)
 
-
-    # color2 = df2["outcome"].apply(lambda x: "red" if x=="missed" else "green")
     missed2 = df2[df2["outcome"]=="missed"]
     made2 = df2[df2["outcome"]=="made"]
     ax[1].scatter(missed2["x_adj"], missed2["y_adj"], marker=".", c="red", alpha=0.35, s=8, label="missed")
@@ -93,7 +90,6 @@ def select_team2000(val):
     ax[0].set_xticks([])
     ax[0].set_yticks([])
     ax[0].set_title("NBA 2000 Shot Chart")
-    # ax[0].legend(bbox_to_anchor=(0.99,0.8), loc="upper left", handlelength=0.55)
     ax[0].legend(bbox_to_anchor=(0,0), loc="upper left", handlelength=0.55)
     fig.canvas.draw_idle()
 

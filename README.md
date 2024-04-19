@@ -1,4 +1,4 @@
-# NBA Shot Analysis
+# NBA Shot Selection Analysis
 
 ## Introduction
 

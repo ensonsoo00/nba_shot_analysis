@@ -137,9 +137,16 @@
             during the 2019-2020 NBA season. Overall, most teams had a total of 6,000 shots during this 
             season, with Dallas, Portland, and Milwaukee having the highest number of shots attempted.   
         </p>
-        <div class = 'image'>
-            <img src="visualizations/shots_attempt.png" width="60%" height="500px" frameborder="0"></img>
-        </div>  
+        <div class="container">
+            <div class="center">
+
+                <div class = 'image'>
+                    <img src="visualizations/shots_attempt.png" width="700px" height="500px" frameborder="0"></img>
+                </div> 
+            </div> 
+        
+        </div>
+        
 
         
         <h3>
@@ -216,9 +223,12 @@
                 game in the mid- to late-2010s.
             </p>
         </div>     
-        <div class = 'center'>
-            <iframe src="shotcomparison.html" width="85%" height="550px" frameborder="0"></iframe>
+        <div class="container">
+            <div class = 'center'>
+                <iframe src="shotcomparison.html" width="800px" height="550px" frameborder="0"></iframe>
+            </div>
         </div>
+        
 
         <h3>Distribution of 3-pointers: Time Remaining in Game</h3>
         <div class = 'container'>
@@ -227,16 +237,28 @@
                     We also wanted to explore the potential factors that influence shot selection. 
                     The following histogram represents the distribution of the number of 3-pointers 
                     taken based on the time remaining in the game. Each color of the histogram bars represents a 
-                    quarter of the game. We can observe that there are peaks at the end of each quarter, with the 
-                    highest peaks being at the 3rd and 4th (final) quarter. This indicates that players tend to 
+                    quarter of the game, and each bar represents a minute in the game. 
+                </p>
+                <p> 
+                    We can observe that there are peaks at the end of each quarter, with the 
+                    highest peaks being at the last minute of the 3rd and 4th (final) quarter. This indicates that players tend to 
                     shoot more 3-pointers at the end of each quarter, with the most 3-pointers taken towards the 
-                    end of the game. Therefore, these observations suggest that the time remaining in each quarter 
-                    and each game is a factor that influences a player's shot selection.  
+                    end of the game. In contrast, we can also observe that there are less 3-pointers taken towards the beginning of the game 
+                    and during the beginning of each quarter. This is most likely due to the players facing less time pressure to score.                    
+                    However, towards the end of each quarter, players may feel compelled to shoot more 3-pointers because this is a strategy to 
+                    maximize points before the quarter/game ends. Furthermore, a successful 3-pointer can significantly 
+                    impact the score, especially towards the end of the game or if the shot is game-winning.   
+
+                    Therefore, these observations suggest that the time remaining in each quarter 
+                    and each game is a factor that influences a player's shot selection.
                 </p>
             </div>
-            <div class = 'image'>
-                <img src="visualizations/timeleft_hist.png" width="70%" height="350px" frameborder="0"></img>
-            </div>   
+            <div class="center">
+                <div class = 'image'>
+                    <img src="visualizations/timeleft_hist.png" width="500px" height="350px" frameborder="0"></img>
+                </div>  
+            </div>
+             
         </div>
 
         
@@ -245,7 +267,8 @@
 
         <p>
             Initially we aggregate all of the teams' wins and teams' losses and eventually compare the 
-            shots made or missed. We then examine the shot distance for each outcome. 
+            shots made or missed. We then examine the shot distance for each outcome. The following figure is a side-by-side box plot that compares the distribution
+            of shot distances based on whether teams win or lose and between made and missed shots.
             </p>
             
         <div class="container">
@@ -277,9 +300,11 @@
             Cavaliers. Although it is not a significant indicator of contributing to games won,
             this could be a fair determinant of winning. 
         </p>
-        
-        <div class = 'center'>
-            <iframe src="bucksvcavs.html" width="95%" height="350px" frameborder="0"></iframe>
+        <div class="container">
+            
+            <div class = 'center'>
+                <iframe src="bucksvcavs.html" width="700px" height="350px" frameborder="0"></iframe>
+            </div>
         </div>
 
         <h3>Summary and Additional Work</h3>
