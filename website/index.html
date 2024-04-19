@@ -15,50 +15,56 @@
 </head>
 <body>
     
-    <h1> NBA Shot Selection</h1>
+    <h1> NBA Shot Analysis</h1>
 
-    <h3>Overall Introduction</h3>
+    <h3>Introduction</h3>
 
-    <p>Understanding the US unemployment rate is crucial for assessing
-        the health of the economy and the well-being of its citizens. 
-        The unemployment rate represents the percentage of people in 
-        labor force who are actively seeking employment but are unable
-        to find jobs. This metric serves as a key indicator of economic
-         performance, reflecting the availability of job opportunities 
-         and the overall level of economic activity. </p>
+    <p> Throughout the NBA's history, the types and distances of shots taken
+        have drastically changed over time. With the introduction of the 3-point
+        line in 1979, the NBA opened up a new opportunity for scoring. Although it
+        took decades for players and teams to take advantage of this means of
+        scoring, recent years seemed to have shown the merit and upside of 
+        utilizing the 3-point line. This also has become a large topic of discussion
+        since and an analysis could prove to be insightful on potential future
+        trends. </p>
 
-    <p>Monitoring the unemployment rate provides insights into 
-        various aspects of the economy, such as consumer spending,
-         business confidence, and government policies' effectiveness.
-        A high unemployment rate may indicate economic downturns, 
-        leading to decreased consumer spending, reduced business 
-        investments, and potential social unrest. Conversely, 
-        a low unemployment rate signifies a robust economy with 
-        ample job opportunities, contributing to higher consumer 
-        confidence and economic growth.</p>
+    <p> In addition to understanding how the use of 3-point line has changed, we
+        wanted to see how the shot selection or shot distance might impact a game.
+        To guide our analysis, we broke down our tasks into 3 components:
+        <ol>
+            <li> Understanding the progression of the Three-Point Revolution </li>
+            <li> Investigating other factors that might influence shot selection </li>
+            <li> Determining if longer distance shots ultimately influence the outcome of the game </li>
+          </ol>
+    </p>
 
-    <p>Several social factors are closely related to the unemployment
-         rate. Persistent unemployment can lead to financial hardships,
-          increased poverty rates, and reduced access to essential 
-          services, such as healthcare and education. Moreover, 
-          unemployment may exacerbate existing social inequalities, 
-          disproportionately affecting marginalized communities, 
-          including minorities, youth, and individuals with lower 
-          educational attainment.</p>
+    <p>In our research into this topic, we found two reference papers that we found to be 
+        relevant to our project. The first was 
+        <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0128885">
+            Basketball Shot Types and and Shot Success in Different Levels of Competitive Basketball
+        </a> by Frane Erčulj and Erik Štrumbelj, where they go into different shot selections made by 
+        players across different levels and leagues of basketball. Although the scope of this paper was 
+        slightly different than this project, it offered interesting insights on the variety 
+        of shot selections to be made and how the level and type of competition played into 
+        that. Our second paper was <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3266291/">The Problem of 
+            Shot Selection in Basketball</a>
+        , written by Brian Skinner. Skinner’s paper was a little more relevant to our project, as he 
+        attempts to create a theoretical model on shot likelihood depending on several factors.</p>
+        
+    <h3>Data</h3>
 
-    <p>To learn more about the US unemployment rate and its implications,
-         you can visit the <a href="https://www.bls.gov/">Bureau of Labor Statistics website</a> or explore 
-         analysis reports from reputable research organizations like 
-         <a href="https://www.pewresearch.org/">Pew Research Center</a>.</p>
+    <p> Our analysis utilized a series of datasets compiled by another 
+        <a href="https://theccalderon.github.io/2019/12/11/scrapping-shots-basketball-reference.html">researcher</a> 
+        scraping data from <a href="https://www.basketball-reference.com/">Basketball Reference</a>.
+        Each dataset contained all shots taken over the course of a season,
+        from the 2000-2001 season through the 2019-2020 season, with around 150,000
+        records and 18 attributes per season's dataset. Each record represents a 
+        single shot taken in a game, with attributes such as the a unique game ID, 
+        the date of the game, and the play in which the shot was taken. However, for
+        the use of our project and its visualizations, we used 9 of the 18 attributes,
+        listed in detail in the following table:
+    </p>  
 
-    <h3>Introduction to the data</h3>
-
-    <p> Our analysis makes use of two datasets. the first data is 
-        a data set called `us_statewide_crime.csv` which contains 
-        the following crime statistics for all US states and the 
-        District of Columbia in 2010. The data has 50 rows with 9 
-        features. The detail information about the features are listed
-        in the following table:</p>  
 
         <div class="center">
         <table class="tg">
@@ -70,49 +76,48 @@
             </thead>
             <tbody>
               <tr>
-                <td class="tg-0lax">State</td>
-                <td class="tg-0lax">State name</td>
+                <td class="tg-0lax">x</td>
+                <td class="tg-0lax">X position of the shot taken in relevance to a shot chart visualization</td>
               </tr>
               <tr>
-                <td class="tg-0lax">Violent_Crime</td>
-                <td class="tg-0lax">Violent crime rate (per 100,000 residents)</td>
+                <td class="tg-0lax">y</td>
+                <td class="tg-0lax">Y position of the shot taken in relevance to a shot chart visualization</td>
               </tr>
               <tr>
-                <td class="tg-0lax">Murder_Rate</td>
-                <td class="tg-0lax">Murder rate (per 100,000 residents)</td>
+                <td class="tg-0lax">time_remaining</td>
+                <td class="tg-0lax">Amount of time remaining in the quarter</td>
               </tr>
               <tr>
-                <td class="tg-0lax">Poverty</td>
-                <td class="tg-0lax">Percent of residents below the poverty rate</td>
+                <td class="tg-0lax">quarter</td>
+                <td class="tg-0lax">Quarter in which the shot was taken</td>
               </tr>
               <tr>
-                <td class="tg-0lax">High_School</td>
-                <td class="tg-0lax">Percent of residents with a high school degree</td>
+                <td class="tg-0lax">shots_by</td>
+                <td class="tg-0lax">Name of the player taking the shot</td>
               </tr>
               <tr>
-                <td class="tg-0lax">College</td>
-                <td class="tg-0lax">Percent of residents with a four-year college degree</td>
+                <td class="tg-0lax">outcome</td>
+                <td class="tg-0lax">Result of the shot (made/missed)</td>
               </tr>
               <tr>
-                <td class="tg-0lax">Single_Parent</td>
-                <td class="tg-0lax">Percent of children living in single parent families</td>
+                <td class="tg-0lax">attempt</td>
+                <td class="tg-0lax">Shot type attempted (2-pointer/3-pointer)</td>
               </tr>
               <tr>
-                <td class="tg-0lax">Unemployed</td>
-                <td class="tg-0lax">Unemployment rate</td>
+                <td class="tg-0lax">distance</td>
+                <td class="tg-0lax">Distance at which shot was taken (ft)</td>
               </tr>
               <tr>
-                <td class="tg-0lax">Metropolitan</td>
-                <td class="tg-0lax">Percent of residents living in a metropolitan area</td>
+                <td class="tg-0lax">team</td>
+                <td class="tg-0lax">Team of the player shooting</td>
               </tr>
             </tbody>
             </table>
         </div>
-        <p>Meanwhile, we also believe that the geographical 
-            information is important when evaluating the unemployment
-            rate. Therefore, we also make use of geographical information 
-            on <a href="https://www.naturalearthdata.com/downloads/">Natural Earth</a>. 
-            The website provides the geographical information for making maps for US states. 
+        <p> Given this data, we needed to clean some of the columns to be able to be 
+            manipulated and analyzed to make better visualizations. For example, we changed 
+            the 'distance' column from '11ft' format to just a numeric value and filtered
+            out some data inconsistencies differing from the play of the game. 
         </p>
         <div class = 'image'>
             <img src="visualizations/shots_attempt.png" width="60%" height="500px" frameborder="0"></img>
@@ -133,7 +138,7 @@
                 
             </div> -->
             <div class = 'center'>
-                <iframe src="shot_chart.html" width="95%" height="500px" frameborder="0"></iframe>
+                <iframe src="shot_chart.html" width="1010px" height="800px" frameborder="0"></iframe>
             </div>
         </div>
             
@@ -146,10 +151,9 @@
                 are the ones with the much higher unemplyment rate.
             </p>
 
-        <h3>Overview of the Unemployment rate</h3>
         <h3>
             Stacked Bar Chart 
-          </h3>
+        </h3>
           
         <div class = 'container'>
             <div class = 'center'>
@@ -157,32 +161,41 @@
                 <script src='https://d3js.org/d3.v7.min.js'></script>
                 <script src='main.js'></script>
             </div>
-            
         </div>
-        <div class="container">
-            <div class = 'text'>
-                <p> First, we present an overview of the unemployment rate
-                    for all 50 states. Alaska is the one with the 
-                    highest unemployment rate, which may due to the seasonal 
-                    business in the state. The effectiveness of labor market 
-                    policies and governance structures can influence unemployment 
-                    rates. Washington, D.C., being the seat of government, may 
-                    experience fluctuations in employment related to government 
-                    spending and policies. Mississippi and Louisiana have economies 
-                    that are heavily reliant on sectors such as agriculture, 
-                    manufacturing, and energy. Economic downturns or fluctuations 
-                    in these industries can impact employment opportunities. 
-                    Connecticut, South Dakota and Virginia have the lowest 
-                    unemplyment rate. These states often have diverse economies 
-                    with strong sectors such as technology, healthcare, finance, 
-                    and tourism. A diverse economy can provide more resilience to 
-                    economic downturns.
-                </p>
-            </div>            
+        <div class="text">
+            <p>
+                For the side by side bar plot, we selected to examine the New York Knicks because there is a wide variety of players 
+                who play different positions. It also provided more insights into outliers that exist in terms of 
+                three point shots attempted. The side by side box plot allows us to make a better comparison and 
+                understand the skew of shots attempted for both categories. 
+
+            </p>
+            <p>
+                The bar plot demonstrated that almost every player contributes to shooting three pointers. 
+                One insight is that the five players with the most three pointers: Julius Randle, RJ Barrett, 
+                Bobby Portis, Marcus Morris, and Kevin Knox are all forwards. 
+                Forward, unlike guards, traditionally only take midrange shots, layups, or dunks. Therefore, 
+                irregardless of position, every player takes three pointers. This is especially apparent 
+                when the offense of the team primarily runs through a specific player.  However, there will
+                 always be outliers such as Mitchell Robinson who has taken zero  three point shots. 
+                 Ultimately the role of such centers is to grab rebounds and make defensive plays and 
+                 offense isn’t their role
+            
+            </p>
         </div>
         
-        <h3> The relationship between unemployment rate and other social factors</h3>
+        <h3>Shot Distances Over Time</h3>
 
+        <div class = 'text'>
+            <p>
+                To see how the shot distances have changed over time, we can take a look into
+                how each team's average shot distance of a season has changed from 2001 to 
+                2019. Generally, for each team, it is clear that over the past two decades,
+                shots have gone further and further on average. A great case of this is the
+                Golden State Warriors, who have been a frontrunner in revolutionizing the 3-point
+                game in the mid- to late-2010s.
+            </p>
+        </div>     
         <div class = 'center'>
             <iframe src="shotcomparison.html" width="85%" height="550px" frameborder="0"></iframe>
         </div>
@@ -233,10 +246,24 @@
             such that user can choose another state to compare with MA and 
             show the bar plot on each factors. 
         </p>
+        <div class="container">
+            <div class = 'center'>
+                <iframe src="boxplot.html" width="95%" height="500px" frameborder="0"></iframe>
+            </div>
 
-        <div class = 'center'>
-            <iframe src="boxplot.html" width="95%" height="500px" frameborder="0"></iframe>
         </div>
+
+
+        <p> We have created a side-by-side bar plot comparing the Milwaukee Buck and the 
+            Cleveland Cavaliers, the best and worst teams in the Eastern Conference, 
+            respectively. This comparison was an exploration on how taking 2-pointers
+            vs. 3-pointers may contribute to wins for a team. Upon analyzing this visualization,
+            although the percentage of made 3-pointers was fairly similar between both teams at
+            around 35%, the Bucks made a significantly higher amount of 3-pointers than the 
+            Cavaliers. Although it is not a significant indicator of contributing to games won,
+            this could be a fair determinant of winning. 
+        </p>
+        
 
 
         <div class = 'center'>
